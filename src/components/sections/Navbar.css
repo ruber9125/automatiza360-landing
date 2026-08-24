@@ -27,29 +27,7 @@
 .navbar__brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.08rem;
-  letter-spacing: -0.02em;
-  color: var(--text-strong);
-}
-
-.navbar__mark {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: var(--grad-brand);
-  box-shadow: var(--shadow-brand);
-}
-
-.navbar__mark-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #05122b;
+  border-radius: var(--radius-sm);
 }
 
 /* --- Menu (enlaces + CTA) --- */

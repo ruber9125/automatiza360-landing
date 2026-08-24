@@ -2,16 +2,21 @@ import { useEffect, useRef, useState } from 'react';
 
 /**
  * Anima la entrada de su contenido cuando aparece en pantalla.
- * Usa IntersectionObserver: sin librerias externas.
+ * Usa IntersectionObserver: sin librerías externas.
  * `delay` en ms permite escalonar listas de tarjetas.
  */
 export default function Reveal({ children, delay = 0, as: Tag = 'div', className = '' }) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+
+  // Si el navegador no soporta IntersectionObserver, arrancamos ya visibles.
+  // Sin este respaldo el contenido se quedaria en opacity: 0 para siempre.
+  const [visible, setVisible] = useState(
+    () => typeof IntersectionObserver === 'undefined'
+  );
 
   useEffect(() => {
     const node = ref.current;
-    if (!node) return;
+    if (!node || typeof IntersectionObserver === 'undefined') return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {

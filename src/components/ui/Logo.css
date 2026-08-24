@@ -1,0 +1,42 @@
+/* Logo — icono + nombre.
+   Los colores salen de --logo-from / --logo-to, así que puedes recolorearlo
+   desde cualquier contenedor sin tocar el componente:
+     .mi-bloque { --logo-from: #fff; --logo-to: #fff; }
+*/
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-strong);
+  --logo-from: var(--brand-500);
+  --logo-to: var(--accent-500);
+}
+
+.logo__mark {
+  flex: none;
+  overflow: visible;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+/* El anillo gira ligeramente al pasar por encima del enlace que lo contiene */
+a:hover > .logo .logo__mark,
+a:hover > .logo.logo--mark .logo__mark {
+  transform: rotate(28deg);
+}
+
+.logo__word {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: currentColor;
+  white-space: nowrap;
+}
+
+.logo__word-accent {
+  background: linear-gradient(100deg, var(--logo-from), var(--logo-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

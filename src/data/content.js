@@ -7,10 +7,28 @@
 export const brand = {
   name: 'Automatiza360',
   tagline: 'Automatización e IA para negocios que quieren crecer sin crecer en tareas.',
-  email: 'hola@automatiza360.com',
   ctaPrimary: 'Reserva una llamada',
   ctaSecondary: 'Ver cómo funciona',
-  calendarUrl: '#reservar',
+};
+
+/* -------------------------------------------------------------------------
+   CONTACTO — configura aquí el destino de todos los CTA de la página.
+
+   ⚠️  PENDIENTE DE CONFIGURAR
+   Pon tu número de WhatsApp en formato internacional y sin símbolos:
+     España   → '34612345678'
+     Colombia → '573001234567'
+     México   → '525512345678'
+
+   Mientras esté vacío, los botones "Reserva una llamada" hacen scroll al
+   bloque de contacto del final en lugar de abrir WhatsApp.
+   La lógica está en src/lib/cta.js
+   ------------------------------------------------------------------------- */
+export const contact = {
+  whatsappNumber: '',
+  whatsappMessage:
+    'Hola, quiero agendar una llamada para conocer los servicios de Automatiza360.',
+  email: 'atencion_cliente@automatiza360.com',
 };
 
 export const nav = [

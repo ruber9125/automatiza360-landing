@@ -1,4 +1,6 @@
-import { brand, footer } from '../../data/content';
+import Logo from '../ui/Logo';
+import { brand, contact, footer } from '../../data/content';
+import { propsCtaPrincipal } from '../../lib/cta';
 import './Footer.css';
 
 export default function Footer() {
@@ -9,15 +11,12 @@ export default function Footer() {
       <div className="container">
         <div className="footer__top">
           <div className="footer__brand">
-            <a className="footer__logo" href="#top">
-              <span className="footer__mark" aria-hidden="true">
-                <span />
-              </span>
-              {brand.name}
+            <a className="footer__logo" href="#top" aria-label={`${brand.name} — inicio`}>
+              <Logo />
             </a>
             <p className="footer__desc">{footer.description}</p>
-            <a className="footer__mail" href={`mailto:${brand.email}`}>
-              {brand.email}
+            <a className="footer__mail" href={`mailto:${contact.email}`}>
+              {contact.email}
             </a>
           </div>
 
@@ -37,7 +36,7 @@ export default function Footer() {
           <div className="footer__col footer__cta">
             <h3 className="footer__col-title">¿Empezamos?</h3>
             <p>Diagnóstico gratuito de 30 minutos, sin compromiso.</p>
-            <a className="footer__cta-link" href={brand.calendarUrl}>
+            <a className="footer__cta-link" {...propsCtaPrincipal()}>
               {brand.ctaPrimary} <span aria-hidden="true">→</span>
             </a>
           </div>

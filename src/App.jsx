@@ -17,8 +17,15 @@ import Footer from './components/sections/Footer';
 export default function App() {
   return (
     <>
+      {/* Permite saltar la navegación con el teclado. Solo es visible al
+          enfocarlo con Tab (ver .skip-link en styles/global.css). */}
+      <a className="skip-link" href="#contenido">
+        Saltar al contenido
+      </a>
+
       <Navbar />
-      <main>
+
+      <main id="contenido">
         <Hero />
         <Metrics />
         <Problems />
@@ -29,6 +36,7 @@ export default function App() {
         <Faq />
         <FinalCta />
       </main>
+
       <Footer />
     </>
   );

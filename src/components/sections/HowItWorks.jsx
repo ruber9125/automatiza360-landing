@@ -3,6 +3,7 @@ import Reveal from '../ui/Reveal';
 import Icon from '../ui/Icon';
 import Button from '../ui/Button';
 import { brand, howItWorks } from '../../data/content';
+import { propsCtaPrincipal } from '../../lib/cta';
 import './HowItWorks.css';
 
 export default function HowItWorks() {
@@ -40,7 +41,7 @@ export default function HowItWorks() {
       <Reveal delay={160}>
         <div className="hiw__cta">
           <p>Empieza por el paso 1. Es gratuito y no te compromete a nada.</p>
-          <Button href={brand.calendarUrl} variant="primary">
+          <Button {...propsCtaPrincipal()} variant="primary">
             {brand.ctaPrimary}
           </Button>
         </div>

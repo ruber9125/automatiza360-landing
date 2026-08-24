@@ -2,6 +2,7 @@ import Button from '../ui/Button';
 import Icon from '../ui/Icon';
 import Reveal from '../ui/Reveal';
 import { brand, finalCta } from '../../data/content';
+import { propsCtaPrincipal } from '../../lib/cta';
 import './FinalCta.css';
 
 export default function FinalCta() {
@@ -26,7 +27,7 @@ export default function FinalCta() {
             </ul>
 
             <div className="fcta__actions">
-              <Button href={brand.calendarUrl} variant="primary" size="lg">
+              <Button {...propsCtaPrincipal()} variant="primary" size="lg">
                 {brand.ctaPrimary}
               </Button>
               <Button href="#casos-de-uso" variant="secondary" size="lg">

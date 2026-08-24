@@ -3,6 +3,7 @@ import Icon from '../ui/Icon';
 import Reveal from '../ui/Reveal';
 import HeroVisual from './HeroVisual';
 import { brand, hero } from '../../data/content';
+import { propsCtaPrincipal } from '../../lib/cta';
 import './Hero.css';
 
 export default function Hero() {
@@ -19,7 +20,7 @@ export default function Hero() {
         {/* --- Columna de copy --- */}
         <div className="hero__content">
           <Reveal>
-            <a className="hero__badge" href={brand.calendarUrl}>
+            <a className="hero__badge" href="#reservar">
               <span className="hero__badge-dot" />
               {hero.badge}
               <span className="hero__badge-arrow">→</span>
@@ -52,7 +53,7 @@ export default function Hero() {
 
           <Reveal delay={320}>
             <div className="hero__actions">
-              <Button href={brand.calendarUrl} variant="primary" size="lg">
+              <Button {...propsCtaPrincipal()} variant="primary" size="lg">
                 {brand.ctaPrimary}
               </Button>
               <Button href="#como-funciona" variant="secondary" size="lg">

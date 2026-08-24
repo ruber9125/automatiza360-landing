@@ -163,8 +163,10 @@
   border-radius: 11px;
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid var(--border-soft);
-  animation: float-soft 6s var(--ease) infinite;
-  animation-delay: calc(var(--i) * 400ms);
+  /* Cada paso flota con su propio desfase para que el flujo se lea
+     como una secuencia y no como cuatro cajas temblando a la vez. */
+  animation: float-soft 7s var(--ease) infinite;
+  animation-delay: calc(var(--i) * 600ms);
 }
 
 .hv__step-icon {

@@ -74,6 +74,42 @@ p {
   border-radius: var(--radius-sm);
 }
 
+/* En pantallas tactiles los enlaces de texto sueltos necesitan area de toque:
+   sin esto, los del pie quedan por debajo de los 44px recomendados.
+   Se usa inline-flex para no estirarlos a todo el ancho del contenedor. */
+@media (pointer: coarse) {
+  .footer__col ul a,
+  .footer__legal a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* ---------- Accesibilidad ---------- */
+
+/* Enlace de salto: fuera de pantalla hasta que recibe foco con Tab */
+.skip-link {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 200;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--radius-pill);
+  background: var(--brand-500);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-160%);
+  transition: transform var(--dur) var(--ease);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
 /* ---------- Layout ---------- */
 
 .container {
