@@ -1,0 +1,92 @@
+/* =============================================================
+   DESIGN TOKENS — Automatiza360
+   Edita aquí primero: cambiando estos valores cambia toda la web.
+   ============================================================= */
+
+:root {
+  /* ---------- Marca / color ---------- */
+  --brand-500: #4f7cff;   /* azul principal (CTA, enlaces) */
+  --brand-400: #6d92ff;
+  --brand-600: #3a63e0;
+  --accent-500: #22d3ee;  /* cian de apoyo (gradientes, detalles) */
+  --accent-400: #67e8f9;
+  --violet-500: #8b5cf6;  /* tercer tono para gradientes */
+
+  /* ---------- Fondos ---------- */
+  --bg-base: #070b16;        /* fondo general */
+  --bg-alt: #0a1020;         /* bandas alternas */
+  --surface-1: #0e1526;      /* tarjetas */
+  --surface-2: #131c31;      /* tarjetas elevadas / hover */
+  --surface-glass: rgba(255, 255, 255, 0.04);
+
+  /* ---------- Texto ---------- */
+  --text-strong: #f4f7ff;
+  --text-base: #c3cbdd;
+  --text-muted: #8b96ae;
+
+  /* ---------- Bordes ---------- */
+  --border-soft: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.13);
+
+  /* ---------- Estados ---------- */
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  /* ---------- Gradientes ---------- */
+  --grad-brand: linear-gradient(135deg, var(--brand-500), var(--accent-500));
+  --grad-text: linear-gradient(100deg, #ffffff 10%, #a9c4ff 50%, var(--accent-400) 95%);
+  --grad-surface: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+
+  /* ---------- Tipografía ---------- */
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --fs-display: clamp(2.6rem, 1.4rem + 4.4vw, 4.4rem);  /* H1 hero */
+  --fs-h2: clamp(2rem, 1.3rem + 2.4vw, 3rem);
+  --fs-h3: clamp(1.15rem, 1.02rem + 0.5vw, 1.4rem);
+  --fs-lead: clamp(1.05rem, 0.98rem + 0.45vw, 1.28rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.8rem;
+
+  --lh-tight: 1.08;
+  --lh-heading: 1.2;
+  --lh-body: 1.65;
+
+  /* ---------- Espaciado (escala base 4px) ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Ritmo vertical de las secciones */
+  --section-py: clamp(4.5rem, 3rem + 7vw, 8rem);
+  --container: 1180px;
+  --container-narrow: 780px;
+  --gutter: clamp(1.25rem, 0.6rem + 2.5vw, 2.5rem);
+
+  /* ---------- Radios ---------- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* ---------- Sombras ---------- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 30px -12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 32px 70px -24px rgba(0, 0, 0, 0.75);
+  --shadow-brand: 0 18px 40px -14px rgba(79, 124, 255, 0.55);
+
+  /* ---------- Movimiento ---------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur: 260ms;
+  --dur-slow: 700ms;
+}

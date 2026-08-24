@@ -1,0 +1,408 @@
+/* =========================================================
+   HERO VISUAL — mockup de panel + tarjetas flotantes
+   ========================================================= */
+
+.hv {
+  position: relative;
+  perspective: 1400px;
+}
+
+.hv__panel {
+  position: relative;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-strong);
+  background: linear-gradient(165deg, #101a2f 0%, #0a1120 60%, #080e1b 100%);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+  transform: rotateY(-7deg) rotateX(3deg);
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.hv:hover .hv__panel {
+  transform: rotateY(-3deg) rotateX(1deg);
+}
+
+/* --- Barra de ventana --- */
+.hv__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.hv__dots {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.hv__dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hv__bar-title {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hv__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--success);
+  white-space: nowrap;
+}
+
+.hv__live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse-dot 1.8s var(--ease) infinite;
+}
+
+.hv__body {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.05rem;
+}
+
+/* --- KPIs --- */
+.hv__kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.hv__kpi {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hv__kpi-label {
+  font-size: 0.63rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hv__kpi-value {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1.1;
+}
+
+.hv__kpi-delta {
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
+/* --- Flujo de automatización --- */
+.hv__flow {
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.hv__flow-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.hv__tag {
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: rgba(79, 124, 255, 0.16);
+  border: 1px solid rgba(79, 124, 255, 0.3);
+  color: var(--brand-400);
+  font-weight: 600;
+  font-size: 0.63rem;
+}
+
+.hv__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hv__step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--border-soft);
+  animation: float-soft 6s var(--ease) infinite;
+  animation-delay: calc(var(--i) * 400ms);
+}
+
+.hv__step-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-strong);
+}
+
+.hv__step--brand .hv__step-icon {
+  background: rgba(79, 124, 255, 0.18);
+  color: var(--brand-400);
+}
+
+.hv__step--violet .hv__step-icon {
+  background: rgba(139, 92, 246, 0.18);
+  color: #b39bff;
+}
+
+.hv__step--accent .hv__step-icon {
+  background: rgba(34, 211, 238, 0.16);
+  color: var(--accent-400);
+}
+
+.hv__step--success .hv__step-icon {
+  background: rgba(52, 211, 153, 0.16);
+  color: var(--success);
+}
+
+.hv__step-text {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.hv__step-text strong {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.hv__step-text em {
+  font-style: normal;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* Línea conectora entre pasos */
+.hv__step-line {
+  position: absolute;
+  left: 1.9rem;
+  bottom: -0.58rem;
+  width: 1px;
+  height: 0.55rem;
+  background: linear-gradient(var(--border-strong), transparent);
+}
+
+/* --- Gráfico --- */
+.hv__chart {
+  padding: 0.85rem 0.9rem 0.7rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.hv__chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.hv__chart-head strong {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--success);
+}
+
+.hv__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 62px;
+}
+
+.hv__bar-item {
+  flex: 1;
+  height: var(--h);
+  border-radius: 4px 4px 2px 2px;
+  background: linear-gradient(180deg, var(--brand-400), rgba(79, 124, 255, 0.18));
+  transform-origin: bottom;
+  animation: hv-grow 900ms var(--ease) backwards;
+  animation-delay: calc(300ms + var(--i) * 70ms);
+}
+
+.hv__bar-item:nth-last-child(-n + 2) {
+  background: linear-gradient(180deg, var(--accent-400), rgba(34, 211, 238, 0.18));
+}
+
+@keyframes hv-grow {
+  from {
+    transform: scaleY(0.05);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* --- Tarjetas flotantes --- */
+.hv__float {
+  position: absolute;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-strong);
+  background: rgba(16, 24, 43, 0.9);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-lg);
+  animation: float-soft 7s var(--ease) infinite;
+}
+
+.hv__float--chat {
+  left: clamp(-2rem, -3vw, 0rem);
+  bottom: 9%;
+  width: min(255px, 78%);
+  padding: 0.8rem 0.9rem;
+}
+
+.hv__float--saved {
+  right: -0.5rem;
+  top: 7%;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0.95rem;
+  animation-delay: 1.2s;
+}
+
+.hv__float-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.55rem;
+}
+
+.hv__avatar {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: var(--grad-brand);
+  color: #05122b;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.hv__float-head strong,
+.hv__float--saved strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.hv__float-head em,
+.hv__float--saved em {
+  font-style: normal;
+  font-size: 0.67rem;
+  color: var(--text-muted);
+}
+
+.hv__bubble {
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+  border-radius: 12px 12px 12px 4px;
+  background: rgba(79, 124, 255, 0.14);
+  border: 1px solid rgba(79, 124, 255, 0.26);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--text-base);
+}
+
+.hv__saved-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--success);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1040px) {
+  .hv__panel {
+    transform: none;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .hv__float--saved {
+    right: max(-0.5rem, calc(50% - 340px));
+  }
+
+  .hv__float--chat {
+    left: max(-1rem, calc(50% - 340px));
+  }
+}
+
+@media (max-width: 620px) {
+  .hv__float--chat {
+    position: static;
+    width: 100%;
+    margin-top: 0.85rem;
+    animation: none;
+  }
+
+  .hv__float--saved {
+    right: 0.25rem;
+    top: -0.9rem;
+    padding: 0.55rem 0.8rem;
+  }
+
+  .hv__kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hv__kpi:last-child {
+    display: none;
+  }
+}

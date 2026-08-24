@@ -1,0 +1,70 @@
+/* Sección de problemas / dolores del cliente */
+
+.problems__grid > * {
+  height: 100%;
+}
+
+.problems__card {
+  height: 100%;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  background: linear-gradient(160deg, rgba(248, 113, 113, 0.045), rgba(255, 255, 255, 0.012));
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.problems__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(248, 113, 113, 0.28);
+  box-shadow: var(--shadow-md);
+}
+
+.problems__icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.24);
+  color: var(--danger);
+}
+
+.problems__title {
+  margin-top: var(--space-4);
+  font-size: var(--fs-h3);
+}
+
+.problems__text {
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: 1.62;
+}
+
+/* Frase puente hacia la sección de beneficios */
+.problems__bridge {
+  position: relative;
+  max-width: 640px;
+  margin: clamp(2.5rem, 2rem + 2vw, 3.5rem) auto 0;
+  padding-top: var(--space-6);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-lead);
+  color: var(--text-base);
+}
+
+.problems__bridge strong {
+  color: var(--text-strong);
+}
+
+.problems__bridge-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-500), transparent);
+}

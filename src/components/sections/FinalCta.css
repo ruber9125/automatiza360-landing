@@ -1,0 +1,102 @@
+/* CTA final — el bloque de conversión más fuerte de la página */
+
+.fcta {
+  padding-block: var(--section-py);
+}
+
+.fcta__box {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 1.8rem + 4vw, 4.5rem) clamp(1.5rem, 0.8rem + 3.5vw, 4rem);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(79, 124, 255, 0.28);
+  background: linear-gradient(155deg, #101c39 0%, #0b1327 55%, #0a1a2c 100%);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+/* Resplandor de fondo */
+.fcta__glow {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  width: 620px;
+  height: 420px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(79, 124, 255, 0.42), transparent 68%);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* Cuadrícula sutil */
+.fcta__box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 0%, #000, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 0%, #000, transparent 75%);
+  pointer-events: none;
+}
+
+.fcta__box > * {
+  position: relative;
+  z-index: 1;
+}
+
+.fcta__title {
+  max-width: 22ch;
+  margin: var(--space-3) auto 0;
+  font-size: var(--fs-h2);
+  letter-spacing: -0.03em;
+}
+
+.fcta__subtitle {
+  max-width: 60ch;
+  margin: var(--space-4) auto 0;
+  color: var(--text-base);
+}
+
+.fcta__points {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem 1.4rem;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+}
+
+.fcta__points li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--fs-sm);
+  color: var(--text-base);
+}
+
+.fcta__points svg {
+  color: var(--accent-400);
+}
+
+.fcta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.fcta__note {
+  margin-top: var(--space-4);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+@media (max-width: 560px) {
+  .fcta__actions .btn {
+    width: 100%;
+  }
+}

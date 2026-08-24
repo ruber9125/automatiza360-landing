@@ -1,0 +1,112 @@
+/* Sección "Cómo funciona" en 3 pasos */
+
+.hiw {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+.hiw__item {
+  height: 100%;
+}
+
+.hiw__card {
+  position: relative;
+  height: 100%;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  background: var(--surface-1);
+  background-image: var(--grad-surface);
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.hiw__card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.hiw__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.hiw__number {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hiw__rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-strong), transparent);
+}
+
+.hiw__title {
+  margin-top: var(--space-4);
+  font-size: var(--fs-h3);
+}
+
+.hiw__text {
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: 1.62;
+}
+
+.hiw__points {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: var(--space-4) 0 0;
+  border-top: 1px solid var(--border-soft);
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hiw__points li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--fs-xs);
+  color: var(--text-base);
+}
+
+.hiw__points svg {
+  flex: none;
+  color: var(--accent-400);
+}
+
+/* CTA de cierre de sección */
+.hiw__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+  text-align: center;
+}
+
+.hiw__cta p {
+  font-family: var(--font-display);
+  font-size: var(--fs-lead);
+  color: var(--text-strong);
+}
+
+@media (max-width: 560px) {
+  .hiw__cta .btn {
+    width: 100%;
+  }
+}

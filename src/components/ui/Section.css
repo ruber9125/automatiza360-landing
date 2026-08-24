@@ -1,0 +1,32 @@
+/* Ritmo vertical y cabecera de las secciones.
+   Cambia --section-py en tokens.css para ajustar el aire de toda la web. */
+
+.section {
+  position: relative;
+  padding-block: var(--section-py);
+}
+
+.section--alt {
+  background: var(--bg-alt);
+  border-block: 1px solid var(--border-soft);
+}
+
+.section__head {
+  margin-bottom: clamp(2.5rem, 1.8rem + 2.5vw, 4rem);
+  max-width: 720px;
+}
+
+.section--center .section__head {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--fs-h2);
+  margin-top: var(--space-3);
+}
+
+.section__subtitle {
+  margin-top: var(--space-4);
+  color: var(--text-muted);
+}

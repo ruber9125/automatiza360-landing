@@ -1,0 +1,58 @@
+/* Sección de beneficios principales */
+
+.benefits__grid > * {
+  height: 100%;
+}
+
+.benefits__card {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Halo sutil que aparece al pasar el ratón */
+.benefits__card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(320px circle at 20% 0%, rgba(79, 124, 255, 0.16), transparent 65%);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+  pointer-events: none;
+}
+
+.benefits__card:hover::after {
+  opacity: 1;
+}
+
+.benefits__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: linear-gradient(150deg, rgba(79, 124, 255, 0.22), rgba(34, 211, 238, 0.12));
+  border: 1px solid rgba(79, 124, 255, 0.28);
+  color: var(--brand-400);
+  transition: transform var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.benefits__card:hover .benefits__icon {
+  transform: translateY(-2px) scale(1.04);
+  color: var(--accent-400);
+}
+
+.benefits__title {
+  position: relative;
+  margin-top: var(--space-4);
+  font-size: var(--fs-h3);
+}
+
+.benefits__text {
+  position: relative;
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: 1.62;
+}

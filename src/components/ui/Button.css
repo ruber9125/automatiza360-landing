@@ -1,0 +1,82 @@
+/* Botones — ajusta aquí padding, radio y color de los CTA */
+
+.btn {
+  --btn-py: 0.78rem;
+  --btn-px: 1.4rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: var(--btn-py) var(--btn-px);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 0.97rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+    background-color var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.btn--lg {
+  --btn-py: 1rem;
+  --btn-px: 1.85rem;
+  font-size: 1.03rem;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* --- Primario: el CTA principal de toda la landing --- */
+.btn--primary {
+  background: var(--grad-brand);
+  color: #05122b;
+  box-shadow: var(--shadow-brand);
+  font-weight: 700;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 50px -14px rgba(79, 124, 255, 0.7);
+}
+
+.btn__arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--dur) var(--ease);
+}
+
+.btn--primary:hover .btn__arrow {
+  transform: translateX(3px);
+}
+
+/* --- Secundario: acción de apoyo --- */
+.btn--secondary {
+  background: var(--surface-glass);
+  border-color: var(--border-strong);
+  color: var(--text-strong);
+  backdrop-filter: blur(10px);
+}
+
+.btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-2px);
+}
+
+/* --- Ghost: enlaces de navegación con forma de botón --- */
+.btn--ghost {
+  background: transparent;
+  color: var(--text-base);
+  padding-inline: 0.9rem;
+}
+
+.btn--ghost:hover {
+  color: var(--text-strong);
+}
