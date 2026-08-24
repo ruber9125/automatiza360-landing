@@ -45,6 +45,10 @@
 }
 
 .hv__bar-title {
+  /* min-width: 0 para que el ellipsis funcione de verdad: sin él, el item
+     flex no baja de su ancho de contenido y estira todo el panel. */
+  min-width: 0;
+  flex: 0 1 auto;
   font-size: 0.72rem;
   color: var(--text-muted);
   white-space: nowrap;
@@ -56,6 +60,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  flex: none;
   margin-left: auto;
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-pill);
@@ -295,16 +300,18 @@
   animation: float-soft 7s var(--ease) infinite;
 }
 
+/* Las flotantes se apoyan en los bordes del panel y sobre zonas sin texto:
+   antes tapaban el KPI de reuniones y el paso «Reunión agendada». */
 .hv__float--chat {
-  left: clamp(-2rem, -3vw, 0rem);
-  bottom: 9%;
+  left: clamp(-4.5rem, -5vw, -2.5rem);
+  bottom: -3rem;
   width: min(255px, 78%);
   padding: 0.8rem 0.9rem;
 }
 
 .hv__float--saved {
-  right: -0.5rem;
-  top: 7%;
+  right: -1.25rem;
+  top: 54%;
   display: flex;
   align-items: center;
   gap: 0.65rem;
@@ -378,11 +385,11 @@
   }
 
   .hv__float--saved {
-    right: max(-0.5rem, calc(50% - 340px));
+    right: max(-1.25rem, calc(50% - 340px));
   }
 
   .hv__float--chat {
-    left: max(-1rem, calc(50% - 340px));
+    left: max(-2.5rem, calc(50% - 340px));
   }
 }
 
@@ -394,9 +401,16 @@
     animation: none;
   }
 
+  /* En móvil no hay hueco libre dentro del panel: se reserva una banda
+     arriba (padding, no margin, para evitar el colapso de márgenes) y la
+     tarjeta se apoya ahí en vez de tapar el título de la ventana. */
+  .hv {
+    padding-top: 4.5rem;
+  }
+
   .hv__float--saved {
     right: 0.25rem;
-    top: -0.9rem;
+    top: 0;
     padding: 0.55rem 0.8rem;
   }
 

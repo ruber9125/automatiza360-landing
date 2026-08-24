@@ -41,10 +41,10 @@ export const nav = [
 
 export const hero = {
   badge: 'Diagnóstico de automatización gratuito',
-  titleTop: 'Tu negocio puede vender más',
-  titleGradient: 'trabajando menos horas',
+  titleTop: 'Tu negocio puede vender más sin sumar',
+  titleGradient: 'trabajo manual',
   subtitle:
-    'Implementamos automatizaciones e inteligencia artificial para que captes más clientes, respondas al instante y dejes de perder ventas en tareas manuales. Sin ampliar tu equipo.',
+    'Implementamos automatizaciones e inteligencia artificial para que captes más clientes, respondas al instante y dejes de perder ventas por procesos que hoy dependen de que alguien se acuerde. Sin ampliar tu equipo.',
   bullets: [
     'Respondes a cada lead en segundos, no en días',
     'Seguimiento comercial que no se olvida de nadie',

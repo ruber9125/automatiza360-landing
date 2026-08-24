@@ -191,7 +191,10 @@
 /* ---------- Responsive ---------- */
 @media (max-width: 1040px) {
   .hero__inner {
-    grid-template-columns: 1fr;
+    /* minmax(0, …) y no 1fr: con `auto` como mínimo, el ancho de contenido
+       del mockup empujaba la columna por encima del viewport y recortaba
+       el texto por la derecha en móviles de 375-390 px. */
+    grid-template-columns: minmax(0, 1fr);
     gap: clamp(3rem, 2rem + 4vw, 4rem);
   }
 
